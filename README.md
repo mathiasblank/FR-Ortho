@@ -2,9 +2,11 @@
 
 French grammar is hard, this tools will help you.
 
-## ortho($singular, $nb, $plural = null)
+## pluralize($singular, $nb, $plural = null)
 
 Easily pluralize *french words*.
 
-- FrenchTools::ortho('oiseau', 2); // - return oiseaux
-- FrenchTools:ortho('bijou', '5'); // - return bijoux
+- FrenchTools::pluralize('oiseau', 2); // - return oiseaux
+- FrenchTools:pluralize('bijou', '29'); // - return bijoux
+- FrenchTools:pluralize('arbre', '9'); // - return arbres
+- FrenchTools:pluralize('piscine', '1'); // - return piscine

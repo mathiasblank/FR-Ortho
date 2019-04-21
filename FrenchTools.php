@@ -11,7 +11,7 @@ class FrenchTools /* extends Tools */
      * @return string           The plural of the word
      * @comment function comments are in french for grammar reasons
      */
-    public static function ortho($singular, $nb, $plural = null) {
+    public static function pluralize($singular, $nb, $plural = null) {
 
         if (empty($nb) || $nb == 1 || $singular == $plural) {
             return $singular;
