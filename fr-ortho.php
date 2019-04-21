@@ -1,6 +1,6 @@
 <?php 
 
-class Tools
+class FrenchTools /* extends Tools */
 {
 
     /**
@@ -9,6 +9,7 @@ class Tools
      * @param  int $nb          Number of element, the value need to be more than 1
      * @param  string $plural   The plural of the word (FOR EXCEPTION)
      * @return string           The plural of the word
+     * @comment function comments are in french for grammar reasons
      */
     public static function ortho($singular, $nb, $plural = null) {
 
@@ -51,17 +52,9 @@ class Tools
             $letters = preg_split('//', $singular, -1, PREG_SPLIT_NO_EMPTY);
             $word_length = strlen($singular);
 
-            if ($word_length >= 1) {
-                $last_letter = $letters[$word_length - 1];
-            }
-
-            if ($word_length >= 2) {
-                $last_2_letters = $letters[$word_length - 2].$last_letter;
-            }
-
-            if ($word_length >= 3) {
-                $last_3_letters = $letters[$word_length - 3].$last_2_letters;
-            }
+            $last_letter = $word_length >= 1 ? $letters[$word_length - 1] : null;
+            $last_2_letters = $word_length >= 2 ? $letters[$word_length - 2].$last_letter : null;
+            $last_3_letters = $word_length >= 3 ? $letters[$word_length - 3].$last_2_letters : null;
 
             // - Mot invariable - si termine par s ou z
             if ($last_letter == 's' || $last_letter == 'x') {
